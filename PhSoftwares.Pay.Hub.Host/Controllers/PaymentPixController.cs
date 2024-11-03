@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 
 namespace PhSoftwares.Pay.Hub.Host.Controllers
 {
@@ -7,22 +8,17 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
     [Route("api/payment/pix")]
     public class PaymentPixController : Controller
     {
-        private readonly ILogger<PaymentPixController> _logger;
+        private readonly IPaymentPixService _paymentPixService;
 
-        public PaymentPixController(ILogger<PaymentPixController> logger)
+        public PaymentPixController(IPaymentPixService paymentPixService)
         {
-            _logger = logger;
+            _paymentPixService = paymentPixService;
         }
 
         [HttpPost]
-        public MakePaymentOutputDTO PostMakePaymentPix(MakePaymentInputDTO input)
+        public async Task<MakePaymentOutputDTO> PostMakePaymentPix(MakePaymentInputDTO input)
         {
-            input.PaymentMethod.MakePayment();
-            return new MakePaymentOutputDTO
-            {
-                Success = true,
-                Message = "Request received - PIX"
-            };
+            return await _paymentPixService.MakePayment(input);
         }
     }
 }

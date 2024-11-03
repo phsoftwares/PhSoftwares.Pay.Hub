@@ -1,4 +1,6 @@
-﻿using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
+using PhSoftwares.Pay.Hub.Core.Entities;
 using PhSoftwares.Pay.Hub.Core.Entities.Person;
 using PhSoftwares.Pay.Hub.Infrastructure.Context;
 using System;
@@ -40,6 +42,11 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             return await _context.Payers.FindAsync(id);
         }
 
+        public async Task<Payer> GetByDocument(String document)
+        {
+            return await _context.Payers.FirstOrDefaultAsync(p => p.DocumentNumber.Trim() == document.Trim());
+        }
+
         public async Task<Payer> Insert(Payer payer)
         {
             _context.Payers.Add(payer);
@@ -49,6 +56,13 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
 
         public async Task<Payer> Update(Payer payer)
         {
+            var existingPayer = await _context.Payers.FindAsync(payer.Id);
+
+            if (existingPayer != null)
+            {
+                _context.Entry(existingPayer).State = EntityState.Detached;
+                payer.CreatedDateTime = existingPayer.CreatedDateTime;
+            }
             _context.Payers.Update(payer);
             await _context.SaveChangesAsync();
             return payer;

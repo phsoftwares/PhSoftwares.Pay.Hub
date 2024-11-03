@@ -1,9 +1,4 @@
 ﻿using PhSoftwares.Pay.Hub.Application.DTOs.Person;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
 {
@@ -12,7 +7,9 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
         Task<PayerDTO> Insert(PayerDTO payerDTO);
         Task<PayerDTO> Delete(Guid id);
         Task<PayerDTO> Update(PayerDTO payerDTO);
+        Task<PayerDTO> UpdateWithId(PayerDTO payerDTO, Guid id);
         Task<IEnumerable<PayerDTO>> GetAll();
         Task<PayerDTO> GetById(Guid id);
+        Task<Guid> GetIdIfDocumentIsRegistred(String document);
     }
 }

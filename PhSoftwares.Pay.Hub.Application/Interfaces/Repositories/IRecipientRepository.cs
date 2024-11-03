@@ -15,5 +15,6 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Repositories
         Task<Recipient> Update(Recipient recipient);
         Task<IEnumerable<Recipient>> GetAll();
         Task<Recipient> GetById(Guid id);
+        Task<Recipient> GetByDocument(String document);
     }
 }

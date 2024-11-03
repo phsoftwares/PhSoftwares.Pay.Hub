@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhSoftwares.Pay.Hub.Infrastructure.Context;
 
@@ -10,9 +11,11 @@ using PhSoftwares.Pay.Hub.Infrastructure.Context;
 namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241103044901_CorrectCreationUserId")]
+    partial class CorrectCreationUserId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -27,9 +30,6 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("datetime");
 
                     b.Property<string>("Document")
                         .IsRequired()
@@ -77,7 +77,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     b.Property<Guid>("RecipientId")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime>("UpdateDateTime")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -96,9 +96,6 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("datetime");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -169,7 +166,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime>("UpdateDateTime")
                         .HasColumnType("datetime");
 
                     b.Property<string>("ZipCode")
@@ -246,7 +243,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime>("UpdateDateTime")
                         .HasColumnType("datetime");
 
                     b.Property<string>("ZipCode")
@@ -291,7 +288,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("BLOB");
 
-                    b.Property<DateTime>("UpdatedDateTime")
+                    b.Property<DateTime>("UpdateDateTime")
                         .HasColumnType("datetime");
 
                     b.HasKey("Id");

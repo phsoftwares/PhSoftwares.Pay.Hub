@@ -19,7 +19,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.EntitiesConfiguration
             builder.Property(x => x.EmailAddress).HasMaxLength(200).IsRequired();
             builder.Property(x => x.DocumentNumber).HasMaxLength(20).IsRequired();
             builder.Property(x => x.CreatedDateTime).IsRequired().HasColumnType("datetime");
-            builder.Property(x => x.UpdateDateTime).HasColumnType("datetime");
+            builder.Property(x => x.UpdatedDateTime).HasColumnType("datetime");
             builder.Property(x => x.AddressStreet).HasMaxLength(100).IsRequired();
             builder.Property(x => x.AddressNumber).HasMaxLength(20).IsRequired();
             builder.Property(x => x.AddressNeighborhood).HasMaxLength(100).IsRequired();

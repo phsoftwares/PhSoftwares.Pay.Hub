@@ -18,6 +18,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.EntitiesConfiguration
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.Name).HasMaxLength(200).IsRequired();
             builder.Property(x => x.Type).IsRequired();
+            builder.Property(x => x.CreatedDateTime).IsRequired().HasColumnType("datetime");
         }
 
     }

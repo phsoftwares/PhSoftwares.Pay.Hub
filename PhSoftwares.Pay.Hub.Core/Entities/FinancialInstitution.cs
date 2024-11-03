@@ -12,6 +12,7 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public required string AccountNumber { get; set; }
         public required string Document { get; set; }
         public ICollection<Payment> Payments { get; set; }
+        public DateTime CreatedDateTime { get; set; }
 
     }
 }

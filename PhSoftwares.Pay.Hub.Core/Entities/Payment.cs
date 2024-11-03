@@ -23,7 +23,7 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public Guid RecipientId { get; set; }
         public required Recipient Recipient { get; set; }
         public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
-        public DateTime CreationUsername { get; set; }
+        public DateTime UpdatedDateTime { get; set; }
+        public Guid CreationUserId { get; set; }
     }
 }

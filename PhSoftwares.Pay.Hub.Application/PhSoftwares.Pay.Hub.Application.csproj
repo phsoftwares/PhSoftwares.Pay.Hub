@@ -10,8 +10,4 @@
     <ProjectReference Include="..\PhSoftwares.Pay.Hub.Core\PhSoftwares.Pay.Hub.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>

@@ -1,10 +1,4 @@
-﻿using PhSoftwares.Pay.Hub.Application.DTOs;
-using PhSoftwares.Pay.Hub.Application.DTOs.Person;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PhSoftwares.Pay.Hub.Application.DTOs.Person;
 
 namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
 {
@@ -13,7 +7,9 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
         Task<RecipientDTO> Insert(RecipientDTO recipientDTO);
         Task<RecipientDTO> Delete(Guid id);
         Task<RecipientDTO> Update(RecipientDTO recipientDTO);
+        Task<RecipientDTO> UpdateWithId(RecipientDTO recipientDTO, Guid id);
         Task<IEnumerable<RecipientDTO>> GetAll();
         Task<RecipientDTO> GetById(Guid id);
+        Task<Guid> GetIdIfDocumentIsRegistred(String document);
     }
 }

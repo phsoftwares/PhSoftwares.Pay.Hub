@@ -15,7 +15,7 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public byte[] PasswordHash { get; private set; }
         public byte[] PasswordSalt { get; private set; }
         public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
+        public DateTime UpdatedDateTime { get; set; }
 
         public User(Guid id, string fullName, string emailAddress)
         {

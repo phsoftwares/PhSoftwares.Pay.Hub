@@ -1,5 +1,7 @@
-﻿using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
 using PhSoftwares.Pay.Hub.Core.Entities;
+using PhSoftwares.Pay.Hub.Core.Entities.Person;
 using PhSoftwares.Pay.Hub.Infrastructure.Context;
 
 namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
@@ -44,6 +46,14 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
 
         public async Task<PaymentType> Update(PaymentType paymentType)
         {
+            var existingPaymentType = await _context.PaymentTypes.FindAsync(paymentType.Id);
+
+            if (existingPaymentType != null)
+            {
+                _context.Entry(existingPaymentType).State = EntityState.Detached;
+                paymentType.CreatedDateTime = existingPaymentType.CreatedDateTime;
+            }
+
             _context.PaymentTypes.Update(paymentType);
             await _context.SaveChangesAsync();
             return paymentType;

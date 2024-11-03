@@ -13,8 +13,8 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public required string EmailAddress { get; set; }
         public required string DocumentNumber { get; set; }
         public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
-        public DateTime CreationUsername { get; set; }
+        public DateTime UpdatedDateTime { get; set; }
+        public Guid CreationUserId { get; set; }
         public string AddressStreet { get; set; }
         public string AddressNumber { get; set; }
         public string AddressNeighborhood { get; set; }
