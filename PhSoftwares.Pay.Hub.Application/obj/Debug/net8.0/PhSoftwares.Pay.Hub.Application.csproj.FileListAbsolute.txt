@@ -1,0 +1,16 @@
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Application.deps.json
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Application.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Application.pdb
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Core.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Core.pdb
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.csproj.AssemblyReference.cache
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.GeneratedMSBuildEditorConfig.editorconfig
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.AssemblyInfoInputs.cache
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.AssemblyInfo.cs
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.csproj.CoreCompileInputs.cache
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.sourcelink.json
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwa.6802CFEB.Up2Date
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\refint\PhSoftwares.Pay.Hub.Application.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Application.pdb
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Application\obj\Debug\net8.0\ref\PhSoftwares.Pay.Hub.Application.dll

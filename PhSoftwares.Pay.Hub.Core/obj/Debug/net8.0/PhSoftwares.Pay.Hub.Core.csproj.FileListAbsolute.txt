@@ -1,0 +1,12 @@
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Core.deps.json
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Core.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Core.pdb
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.GeneratedMSBuildEditorConfig.editorconfig
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.AssemblyInfoInputs.cache
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.AssemblyInfo.cs
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.csproj.CoreCompileInputs.cache
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.sourcelink.json
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\refint\PhSoftwares.Pay.Hub.Core.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Core.pdb
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Core\obj\Debug\net8.0\ref\PhSoftwares.Pay.Hub.Core.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PhSoftwares.Pay.Hub.Host.props" />
+</Project>

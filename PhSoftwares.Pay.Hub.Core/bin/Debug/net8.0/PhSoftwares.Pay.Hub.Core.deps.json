@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PhSoftwares.Pay.Hub.Core/1.0.0": {
+        "runtime": {
+          "PhSoftwares.Pay.Hub.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PhSoftwares.Pay.Hub.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

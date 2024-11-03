@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhSoftwares.Pay.Hub.Application.DTOs.Person
 {
-    public class Payer: PersonDTO
+    public class PayerDTO: PersonDTO
     {
     }
 }

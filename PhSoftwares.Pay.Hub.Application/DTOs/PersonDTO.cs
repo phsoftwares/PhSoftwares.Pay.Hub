@@ -10,6 +10,6 @@ namespace PhSoftwares.Pay.Hub.Application.DTOs
     {
         public required string FullName { get; set; }
         public required string DocumentNumber { get; set; }
-        public AdressDTO Adress { get; set; }
+        public AddressDTO Adress { get; set; }
     }
 }

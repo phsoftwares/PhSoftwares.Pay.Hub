@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentBoletoController",
+    "Method": "PostMakePaymentBoleto",
+    "RelativePath": "api/payment/boleto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentOutputDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentPixController",
+    "Method": "PostMakePaymentPix",
+    "RelativePath": "api/payment/pix",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentOutputDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
