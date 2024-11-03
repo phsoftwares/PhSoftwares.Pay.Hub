@@ -1,25 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using PhSoftwares.Pay.Hub.Infrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
-
+var startup = new Startup(builder.Configuration);
 // Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
 }
 
-app.UseHttpsRedirection();
 
-app.UseAuthorization();
+// Configure the HTTP request pipeline.
+startup.ConfigureMiddleware(app, app.Environment);
 
 app.MapControllers();
-
 app.Run();

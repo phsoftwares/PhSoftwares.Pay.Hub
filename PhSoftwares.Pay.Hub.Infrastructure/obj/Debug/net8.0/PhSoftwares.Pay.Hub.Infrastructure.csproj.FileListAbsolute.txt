@@ -16,3 +16,5 @@ X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\o
 X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\obj\Debug\net8.0\refint\PhSoftwares.Pay.Hub.Infrastructure.dll
 X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Infrastructure.pdb
 X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\obj\Debug\net8.0\ref\PhSoftwares.Pay.Hub.Infrastructure.dll
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\bin\Debug\net8.0\PhSoftwares.Pay.Hub.Infrastructure.runtimeconfig.json
+X:\WorkspacePhSoftwares\PhSoftwares.Pay.Hub\PhSoftwares.Pay.Hub.Infrastructure\obj\Debug\net8.0\PhSoftwares.Pay.Hub.Infrastructure.genruntimeconfig.cache
