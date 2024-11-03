@@ -29,7 +29,7 @@ namespace PhSoftwares.Pay.Hub.Application.Mappings
             });
         }
 
-        Task<RecipientDTO> IRecipientMapper.MapFromEntitie(Recipient recipient)
+        public Task<RecipientDTO> MapFromEntitie(Recipient recipient)
         {
             return Task.FromResult(new RecipientDTO()
             {

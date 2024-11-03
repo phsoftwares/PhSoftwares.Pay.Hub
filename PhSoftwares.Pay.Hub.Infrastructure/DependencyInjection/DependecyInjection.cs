@@ -1,13 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Mappings;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 using PhSoftwares.Pay.Hub.Application.Mappings;
 using PhSoftwares.Pay.Hub.Application.Services;
+using PhSoftwares.Pay.Hub.Core.Account;
 using PhSoftwares.Pay.Hub.Infrastructure.Context;
+using PhSoftwares.Pay.Hub.Infrastructure.Identity;
 using PhSoftwares.Pay.Hub.Infrastructure.Repositories;
+using System.Text;
 
 namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
 {
@@ -20,6 +25,36 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
                 options.UseSqlite(configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
             });
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }
+            ).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidAudience = configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])),
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserMapper, UserMapper>();
+            services.AddScoped<IUserService, UserService>();
+
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
+            services.AddScoped<ITokenService, TokenService>();
+
 
             services.AddScoped<IPayerRepository, PayerRepository>();
             services.AddScoped<IRecipientRepository, RecipientRepository>();

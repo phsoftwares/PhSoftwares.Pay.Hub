@@ -27,7 +27,7 @@ namespace PhSoftwares.Pay.Hub.Application.Mappings
             });
         }
 
-        Task<PayerDTO> IPayerMapper.MapFromEntitie(Payer payer)
+        public Task<PayerDTO> MapFromEntitie(Payer payer)
         {
             return Task.FromResult(new PayerDTO()
             {

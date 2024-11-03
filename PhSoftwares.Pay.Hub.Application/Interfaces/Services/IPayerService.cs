@@ -1,15 +1,13 @@
-﻿using PhSoftwares.Pay.Hub.Application.DTOs.Person;
+﻿using PhSoftwares.Pay.Hub.Application.DTOs;
 
 namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
 {
-    public interface IPayerService
+    public interface IUserService
     {
-        Task<PayerDTO> Insert(PayerDTO payerDTO);
-        Task<PayerDTO> Delete(Guid id);
-        Task<PayerDTO> Update(PayerDTO payerDTO);
-        Task<PayerDTO> UpdateWithId(PayerDTO payerDTO, Guid id);
-        Task<IEnumerable<PayerDTO>> GetAll();
-        Task<PayerDTO> GetById(Guid id);
-        Task<Guid> GetIdIfDocumentIsRegistred(String document);
+        Task<UserDTO> Insert(UserDTO userDTO);
+        Task<UserDTO> Delete(Guid id);
+        Task<UserDTO> Update(UserDTO userDTO);
+        Task<IEnumerable<UserDTO>> GetAll();
+        Task<UserDTO> GetById(Guid id);
     }
 }

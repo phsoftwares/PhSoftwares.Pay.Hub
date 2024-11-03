@@ -50,5 +50,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.UserController",
+    "Method": "Insert",
+    "RelativePath": "api/user/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhSoftwares.Pay.Hub.Host.Models.UserToken",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
