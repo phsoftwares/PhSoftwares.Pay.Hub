@@ -4,14 +4,83 @@
     "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj": {}
   },
   "projects": {
-    "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj": {
+    "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj",
-        "projectName": "PhSoftwares.Pay.Hub.Host",
-        "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj",
+        "projectUniqueName": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj",
+        "projectName": "PhSoftwares.Pay.Hub.Application",
+        "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj",
         "packagesPath": "C:\\Users\\PEDRO\\.nuget\\packages\\",
-        "outputPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\obj\\",
+        "outputPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "X:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PEDRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj": {
+                "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj",
+        "projectName": "PhSoftwares.Pay.Hub.Core",
+        "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj",
+        "packagesPath": "C:\\Users\\PEDRO\\.nuget\\packages\\",
+        "outputPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "X:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +118,75 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj",
+        "projectName": "PhSoftwares.Pay.Hub.Host",
+        "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\PhSoftwares.Pay.Hub.Host.csproj",
+        "packagesPath": "C:\\Users\\PEDRO\\.nuget\\packages\\",
+        "outputPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Host\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "X:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PEDRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\PhSoftwares.Pay.Hub.Infrastructure.csproj": {
+                "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\PhSoftwares.Pay.Hub.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -70,6 +208,78 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\PhSoftwares.Pay.Hub.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\PhSoftwares.Pay.Hub.Infrastructure.csproj",
+        "projectName": "PhSoftwares.Pay.Hub.Infrastructure",
+        "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\PhSoftwares.Pay.Hub.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\PEDRO\\.nuget\\packages\\",
+        "outputPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "X:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PEDRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj": {
+                "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj"
+              },
+              "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj": {
+                "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

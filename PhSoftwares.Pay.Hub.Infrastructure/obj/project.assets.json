@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "PhSoftwares.Pay.Hub.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "PhSoftwares.Pay.Hub.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PhSoftwares.Pay.Hub.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PhSoftwares.Pay.Hub.Application.dll": {}
+        }
+      },
+      "PhSoftwares.Pay.Hub.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PhSoftwares.Pay.Hub.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PhSoftwares.Pay.Hub.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PhSoftwares.Pay.Hub.Application/1.0.0": {
+      "type": "project",
+      "path": "../PhSoftwares.Pay.Hub.Application/PhSoftwares.Pay.Hub.Application.csproj",
+      "msbuildProject": "../PhSoftwares.Pay.Hub.Application/PhSoftwares.Pay.Hub.Application.csproj"
+    },
+    "PhSoftwares.Pay.Hub.Core/1.0.0": {
+      "type": "project",
+      "path": "../PhSoftwares.Pay.Hub.Core/PhSoftwares.Pay.Hub.Core.csproj",
+      "msbuildProject": "../PhSoftwares.Pay.Hub.Core/PhSoftwares.Pay.Hub.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "PhSoftwares.Pay.Hub.Application >= 1.0.0",
+      "PhSoftwares.Pay.Hub.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\PEDRO\\.nuget\\packages\\": {},
@@ -39,7 +77,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj": {
+              "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Application\\PhSoftwares.Pay.Hub.Application.csproj"
+            },
+            "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj": {
+              "projectPath": "X:\\WorkspacePhSoftwares\\PhSoftwares.Pay.Hub\\PhSoftwares.Pay.Hub.Core\\PhSoftwares.Pay.Hub.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

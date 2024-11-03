@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhSoftwares.Pay.Hub.Application\PhSoftwares.Pay.Hub.Application.csproj" />
+    <ProjectReference Include="..\PhSoftwares.Pay.Hub.Core\PhSoftwares.Pay.Hub.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EntitiesConfiguration\" />
+    <Folder Include="Context\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="DependencyInjection\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
