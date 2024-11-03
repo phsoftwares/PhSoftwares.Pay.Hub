@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
@@ -6,6 +7,7 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
 {
     [ApiController]
     [Route("api/payment/pix")]
+    [Authorize]
     public class PaymentPixController : Controller
     {
         private readonly IPaymentPixService _paymentPixService;
@@ -15,9 +17,12 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
             _paymentPixService = paymentPixService;
         }
 
-        [HttpPost]
+        [HttpPost]  
         public async Task<MakePaymentOutputDTO> PostMakePaymentPix(MakePaymentInputDTO input)
         {
+            var userId = Guid.Parse(User.FindFirst("id").Value);
+            input.Recipient.SetCreationUserId(userId);
+            input.Payer.SetCreationUserId(userId);
             return await _paymentPixService.MakePayment(input);
         }
     }

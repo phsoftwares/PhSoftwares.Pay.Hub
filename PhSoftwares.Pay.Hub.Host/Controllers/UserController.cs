@@ -46,5 +46,21 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
                 Token = token
             };
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<UserToken>> Login(UserDTO userDTO)
+        {
+            var user = await _userService.GetByEmailAddress(userDTO.EmailAddress);
+            if (user == null || user.Id == null)
+            {
+                return BadRequest("User not exists.");
+            }
+
+            var token = _authenticateService.GenerateToken(user.Id ?? Guid.Empty, user.EmailAddress);
+            return new UserToken
+            {
+                Token = token
+            };
+        }
     }
 }
