@@ -5,7 +5,7 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
 {
     [ApiController]
     [Route("api/payment/boleto")]
-    public class PaymentBoletoController : ControllerBase
+    public class PaymentBoletoController : Controller
     {
         private readonly ILogger<PaymentBoletoController> _logger;
 

@@ -18,6 +18,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Context
         public DbSet<PaymentType> PaymentTypes { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<FinancialInstitution> FinancialInstitutions { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

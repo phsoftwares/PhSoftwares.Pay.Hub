@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhSoftwares.Pay.Hub.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00547db9a593e7b8786a69bfa3fb92e945b771c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8deddf17fd4dc7d06a598ce1f5002524e29c910b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhSoftwares.Pay.Hub.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhSoftwares.Pay.Hub.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
