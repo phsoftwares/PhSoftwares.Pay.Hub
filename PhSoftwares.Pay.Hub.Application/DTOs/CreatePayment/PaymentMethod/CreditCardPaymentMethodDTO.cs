@@ -9,5 +9,6 @@ namespace PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentMethod
     public class CreditCardPaymentMethodDTO : PaymentMethodDTO
     {
         public CardDetails CardDetails { get; set; }
+        public CreditCardPaymentMethodDTO() { }
     }
 }

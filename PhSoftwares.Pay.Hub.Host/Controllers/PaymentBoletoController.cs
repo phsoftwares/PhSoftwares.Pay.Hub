@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 
@@ -20,10 +20,10 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
             _paymentBoletoService = paymentBoletoService;
         }
 
-        [HttpPost]
-        public async Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO input)
+        [HttpPost("sicredi")]
+        public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoSicredi(CreatePaymentBoletoSicrediInputDTO input)
         {
-            return await _paymentBoletoService.MakePayment(input);
+            return await _paymentBoletoService.CreatePaymentBoletoSicredi(input);
         }
     }
 }

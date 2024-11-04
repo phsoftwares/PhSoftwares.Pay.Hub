@@ -1,41 +1,15 @@
 [
   {
     "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentBoletoController",
-    "Method": "MakePayment",
-    "RelativePath": "api/payment/boleto",
+    "Method": "CreatePaymentBoletoSicredi",
+    "RelativePath": "api/payment/boleto/sicredi",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "input",
-        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentInputDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput.BoletoPaymentOutputDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentPixController",
-    "Method": "PostMakePaymentPix",
-    "RelativePath": "api/payment/pix",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "input",
-        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentInputDTO",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto.CreatePaymentBoletoSicrediInputDTO",
         "IsRequired": true
       }
     ],

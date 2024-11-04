@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 using PhSoftwares.Pay.Hub.Application.DTOs.AuthorizationDetails.Sicredi;
-using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentMethod;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using PhSoftwares.Pay.Hub.Application.DTOs.Person;
@@ -21,15 +21,11 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             _boletoSicrediService = boletoSicrediService;
         }
 
-        public async Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO makePaymentInputDTO)
+        public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
-            var payerDTO = await UpsertPayerByDocument(makePaymentInputDTO.Payer);
-            var recipientDTO = await UpsertRecipientByDocument(makePaymentInputDTO.Recipient);
-            if (makePaymentInputDTO.PaymentMethod is BoletoPaymentMethodDTO boletoPaymentMethod && boletoPaymentMethod.AuthorizationDetails is SicrediAuthorizationDetailsDTO authorizationDetails)
-            {
-                return await _boletoSicrediService.StartBillingRegistration(makePaymentInputDTO);
-            }
-            return null;
+            var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
+            var recipientDTO = await UpsertRecipientByDocument(inputDTO.Recipient);
+            return await _boletoSicrediService.StartBillingRegistration(inputDTO);
         }
 
         private async Task<PayerDTO> UpsertPayerByDocument(PayerDTO payerDTO)

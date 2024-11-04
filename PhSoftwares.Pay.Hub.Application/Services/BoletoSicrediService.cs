@@ -1,13 +1,16 @@
 ﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using PhSoftwares.Pay.Hub.Application.DTOs.AuthorizationDetails.Sicredi;
-using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.CreatePayment.PaymentOutput;
+using PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentMethod;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
+using PhSoftwares.Pay.Hub.Application.ExternalDTOs.Sicredi;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 using PhSoftwares.Pay.Hub.Boleto.Consts;
 using PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi;
 using PhSoftwares.Pay.Hub.Boleto.Interfaces.Mappers;
+using System.Text;
 
 namespace PhSoftwares.Pay.Hub.Application.Services
 {
@@ -24,25 +27,21 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             _logger = logger;
         }
 
-        public async Task<BoletoPaymentOutputDTO> StartBillingRegistration(MakePaymentInputDTO inputDTO)
+        public async Task<BoletoPaymentOutputDTO> StartBillingRegistration(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
-            if (inputDTO.PaymentMethod is BoletoPaymentMethodDTO boletoPaymentMethod && boletoPaymentMethod.AuthorizationDetails is SicrediAuthorizationDetailsDTO authorizationDetails)
+            var boletoSicrediInput = await CreateBoletoInput(inputDTO);
+            var boletoSicrediOutput = await RegisterBillingBoleto(boletoSicrediInput, inputDTO.AuthorizationDetails);
+            var paymentDetails = await _boletoSicrediMapper.MapBoletoSicrediOutputToNormalized(boletoSicrediOutput);
+            return await Task.FromResult(new BoletoPaymentOutputDTO()
             {
-                var boletoSicrediInput = await CreateBoletoInput(inputDTO);
-                var boletoSicrediOutput = await RegisterBillingBoleto(boletoSicrediInput, authorizationDetails);
-                var paymentDetails = await _boletoSicrediMapper.MapBoletoSicrediOutputToNormalized(boletoSicrediOutput);
-                return await Task.FromResult(new BoletoPaymentOutputDTO()
-                {
-                    Success = paymentDetails != null && !string.IsNullOrEmpty(paymentDetails.OurNumber),
-                    PaymentDetails = paymentDetails,
-                    Message = "TODO: VOLTAR AQUI",
-                    Id = Guid.Empty//"TODO: VOLTARAQUI"
-                });
-            }
-            return null;
+                Success = paymentDetails != null && !string.IsNullOrEmpty(paymentDetails.OurNumber),
+                PaymentDetails = paymentDetails,
+                Id = Guid.Empty,//"TODO: VOLTARAQUI"
+                ErrorDetails = await _boletoSicrediMapper.MapErrorDetails(boletoSicrediOutput.DetalhesErro)
+            });
         }
 
-        public Task<BoletoSicrediInputDTO> CreateBoletoInput(MakePaymentInputDTO inputDTO)
+        public Task<BoletoSicrediInputDTO> CreateBoletoInput(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
             return _boletoSicrediMapper.MapBoletoInput(inputDTO);
         }
@@ -53,19 +52,25 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             var url = SicrediConsts.BaseUrlSicredi + SicrediConsts.BaseUrlRegisterBoletoSicredi;
             using (var client = _httpClientFactory.CreateClient())
             {
-                var request = new HttpRequestMessage(HttpMethod.Get, url);
+                var output = new BoletoSicrediOutputDTO();
+                var request = new HttpRequestMessage(HttpMethod.Post, url);
                 request.Headers.Add("x-api-key", authorizationDetailsDTO.AccessToken);
                 request.Headers.Add("cooperativa", authorizationDetailsDTO.Cooperative);
+                request.Headers.Add("codigoBeneficiario", authorizationDetailsDTO.RecipientCode);
                 request.Headers.Add("posto", authorizationDetailsDTO.Post);
                 request.Headers.Add("Authorization", "Bearer " + accessToken);
+                var jsonContent = JsonConvert.SerializeObject(inputDTO);
+                request.Content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
                 var apiResponse = await client.SendAsync(request);
-                if (!apiResponse.IsSuccessStatusCode)
-                {
-                    _logger.LogError("Problem when making the request to Sicredi on RegisterBillingBoleto!");
-                }
 
                 var responseString = await apiResponse.Content.ReadAsStringAsync();
-                var output = JsonConvert.DeserializeObject<BoletoSicrediOutputDTO>(responseString);
+                output = JsonConvert.DeserializeObject<BoletoSicrediOutputDTO>(responseString);
+                if (!apiResponse.IsSuccessStatusCode)
+                {       
+                    _logger.LogError("Problem when making the request to Sicredi on RegisterBillingBoleto!");
+                    output.DetalhesErro = JsonConvert.DeserializeObject<BoletoSicrediErroOutputDTO>(responseString);
+                }               
                 return output;
             }
         }
@@ -78,11 +83,10 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, url);
                 request.Headers.Add("x-api-key", authorizationDetailsDTO.AccessToken);
-                request.Headers.Add("cooperativa", authorizationDetailsDTO.Cooperative);
-                request.Headers.Add("posto", authorizationDetailsDTO.Post);
+                request.Headers.Add("context", "COBRANCA");      
+
                 var formContent = new FormUrlEncodedContent(body);
                 request.Content = formContent;
-                request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/x-www-form-urlencoded");
                 var apiResponse = await client.SendAsync(request);
                 if (!apiResponse.IsSuccessStatusCode)
                 {
@@ -102,11 +106,11 @@ namespace PhSoftwares.Pay.Hub.Application.Services
         private Dictionary<string, string> GetBodyToGetAccessToken(SicrediAuthorizationDetailsDTO authorizationDetailsDTO)
         {
             return new Dictionary<string, string>
-            {
+            { 
                 { "username", authorizationDetailsDTO.Username },
                 { "password", authorizationDetailsDTO.Password },
-                { "posto", authorizationDetailsDTO.Post },
-                { "cooperativa", authorizationDetailsDTO.Cooperative },
+                { "scope", "cobranca" },
+                { "grant_type", "password" },
             };
         }
     }

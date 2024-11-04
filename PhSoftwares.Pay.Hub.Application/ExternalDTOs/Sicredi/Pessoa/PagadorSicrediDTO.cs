@@ -8,6 +8,6 @@ namespace PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi.Pessoa
 {
     public class PagadorSicrediDTO:PessoaSicrediDTO
     {
-        public string Endereco { get; set; }
+        public string endereco { get; set; }
     }
 }

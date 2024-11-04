@@ -4,30 +4,30 @@ namespace PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi
 {
     public class BoletoSicrediInputDTO
     {
-        public string TipoCobranca { get; set; }
-        public string CodigoBeneficiario { get; set; }
-        public PagadorSicrediDTO Pagador { get; set; }
-        public BeneficiarioFinalSicrediDTO BeneficiarioFinal { get; set; }
-        public string EspecieDocumento { get; set; }
-        public string NossoNumero { get; set; }
-        public string SeuNumero { get; set; }
-        public DateTime DataVencimento { get; set; }
-        public int? DiasProtestoAuto { get; set; }
-        public int? DiasNegativacaoAuto { get; set; }
-        public int? ValidadeAposVencimento { get; set; }
-        public decimal Valor { get; set; }
-        public string TipoDesconto { get; set; }
-        public decimal? ValorDesconto1 { get; set; }
-        public DateTime? DataDesconto1 { get; set; }
-        public decimal? ValorDesconto2 { get; set; }
-        public DateTime? DataDesconto2 { get; set; }
-        public decimal? ValorDesconto3 { get; set; }
-        public DateTime? DataDesconto3 { get; set; }
-        public decimal? DescontoAntecipado { get; set; }
-        public string TipoJuros { get; set; }
-        public decimal? Juros { get; set; }
-        public decimal? Multa { get; set; }
-        public List<string> Informativo { get; set; }
-        public List<string> Mensagem { get; set; }
+        public BeneficiarioFinalSicrediDTO beneficiarioFinal { get; set; }
+        public string especieDocumento { get; set; }
+        public string tipoCobranca { get; set; }
+        public string codigoBeneficiario { get; set; }
+        public PagadorSicrediDTO pagador { get; set; }     
+        public string nossoNumero { get; set; }
+        public string seuNumero { get; set; }
+        public DateTime dataVencimento { get; set; }
+        public int? diasProtestoAuto { get; set; }
+        public int? diasNegativacaoAuto { get; set; }
+        public int? validadeAposVencimento { get; set; }
+        public decimal valor { get; set; }
+        public string tipoDesconto { get; set; }
+        public decimal? valorDesconto1 { get; set; }
+        public DateTime? dataDesconto1 { get; set; }
+        public decimal? valorDesconto2 { get; set; }
+        public DateTime? dataDesconto2 { get; set; }
+        public decimal? valorDesconto3 { get; set; }
+        public DateTime? dataDesconto3 { get; set; }
+        public decimal? descontoAntecipado { get; set; }
+        public string tipoJuros { get; set; }
+        public decimal? juros { get; set; }
+        public decimal? multa { get; set; }
+        public List<string> informativos { get; set; }
+        public List<string> mensagens { get; set; }
     }
 }

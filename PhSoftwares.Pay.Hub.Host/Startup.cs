@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection;
+﻿using PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection;
 
 public class Startup
 {

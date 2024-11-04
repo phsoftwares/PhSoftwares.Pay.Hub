@@ -1,4 +1,4 @@
-﻿using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+﻿using PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,6 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
 {
     public interface IPaymentPixService
     {
-        Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO makePaymentInputDTO);
+        Task<BoletoPaymentOutputDTO> CreatePaymentPixSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO);
     }
 }

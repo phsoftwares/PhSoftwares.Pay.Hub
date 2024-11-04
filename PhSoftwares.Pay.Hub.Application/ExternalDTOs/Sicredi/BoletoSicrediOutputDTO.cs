@@ -1,4 +1,6 @@
-﻿namespace PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi
+﻿using PhSoftwares.Pay.Hub.Application.ExternalDTOs.Sicredi;
+
+namespace PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi
 {
     public class BoletoSicrediOutputDTO
     {
@@ -9,5 +11,6 @@
         public string Cooperativa { get; set; } 
         public string Posto { get; set; } 
         public string NossoNumero { get; set; }
+        public BoletoSicrediErroOutputDTO DetalhesErro { get; set; }
     }
 }

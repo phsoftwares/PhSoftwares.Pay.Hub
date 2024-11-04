@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhSoftwares.Pay.Hub.Application.DTOs.CreatePayment.PaymentOutput;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace PhSoftwares.Pay.Hub.Application.DTOs.MakePayment
     {
         public Guid Id { get; set; }
         public bool Success { get; set; }
-        public string Message { get; set; }
+        public ErrorDetailsDTO ErrorDetails { get; set; }
     }
 }

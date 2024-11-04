@@ -1,4 +1,4 @@
-﻿using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+﻿using PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using PhSoftwares.Pay.Hub.Application.DTOs.Person;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
@@ -22,16 +22,15 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             _recipientService = recipientService;
         }
 
-        public async Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO makePaymentInputDTO)
+        public async Task<BoletoPaymentOutputDTO> CreatePaymentPixSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
-            var payerDTO = await UpsertPayerByDocument(makePaymentInputDTO.Payer);
-            var recipientDTO = await UpsertRecipientByDocument(makePaymentInputDTO.Recipient);
+            var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
+            var recipientDTO = await UpsertRecipientByDocument(inputDTO.Recipient);
             //makePaymentInputDTO.PaymentMethod.MakePayment();
 
             return await Task.FromResult(new BoletoPaymentOutputDTO
             {
-                Success = true,
-                Message = "Request received - PIX"
+                Success = true
             });
         }
 

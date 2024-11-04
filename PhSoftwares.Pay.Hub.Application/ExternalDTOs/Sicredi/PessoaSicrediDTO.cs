@@ -8,13 +8,13 @@ namespace PhSoftwares.Pay.Hub.Boleto.ExternalDTOs.Sicredi
 {
     public class PessoaSicrediDTO
     {
-        public string Documento { get; set; }
-        public string TipoPessoa { get; set; }
-        public string Nome { get; set; }
-        public string Cidade { get; set; }
-        public string Uf { get; set; }
-        public string Cep { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
+        public string documento { get; set; }
+        public string tipoPessoa { get; set; }
+        public string nome { get; set; }
+        public string cidade { get; set; }
+        public string uf { get; set; }
+        public string cep { get; set; }
+        public string telefone { get; set; }
+        public string email { get; set; }
     }
 }
