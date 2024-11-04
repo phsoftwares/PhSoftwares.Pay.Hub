@@ -11,20 +11,20 @@ namespace PhSoftwares.Pay.Hub.Application.Services
     public class PaymentBoletoService : IPaymentBoletoService
     {
         private readonly IPayerService _payerService;
-        private readonly IRecipientService _recipientService;
+        private readonly IPayeeService _payeeService;
         private readonly IBoletoSicrediService _boletoSicrediService;
 
-        public PaymentBoletoService(IPayerService payerService, IRecipientService recipientService, IBoletoSicrediService boletoSicrediService)
+        public PaymentBoletoService(IPayerService payerService, IPayeeService payeeService, IBoletoSicrediService boletoSicrediService)
         {
             _payerService = payerService;
-            _recipientService = recipientService;
+            _payeeService = payeeService;
             _boletoSicrediService = boletoSicrediService;
         }
 
         public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
             var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
-            var recipientDTO = await UpsertRecipientByDocument(inputDTO.Recipient);
+            var payeeDTO = await UpsertPayeeByDocument(inputDTO.Payee);
             return await _boletoSicrediService.StartBillingRegistration(inputDTO);
         }
 
@@ -41,16 +41,16 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             }
         }
 
-        private async Task<RecipientDTO> UpsertRecipientByDocument(RecipientDTO recipientDTO)
+        private async Task<PayeeDTO> UpsertPayeeByDocument(PayeeDTO payeeDTO)
         {
-            var recipientId = await _recipientService.GetIdIfDocumentIsRegistred(recipientDTO.DocumentNumber);
-            if (recipientId == Guid.Empty)
+            var payeeId = await _payeeService.GetIdIfDocumentIsRegistred(payeeDTO.DocumentNumber);
+            if (payeeId == Guid.Empty)
             {
-                return await _recipientService.Insert(recipientDTO);
+                return await _payeeService.Insert(payeeDTO);
             }
             else
             {
-                return await _recipientService.UpdateWithId(recipientDTO, recipientId);
+                return await _payeeService.UpdateWithId(payeeDTO, payeeId);
             }
         }
     }

@@ -13,7 +13,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Context
     {
         public ApplicationDbContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<Recipient> Recipients { get; set; }
+        public DbSet<Payee> Payees { get; set; }
         public DbSet<Payer> Payers { get; set; }
         public DbSet<PaymentType> PaymentTypes { get; set; }
         public DbSet<Payment> Payments { get; set; }

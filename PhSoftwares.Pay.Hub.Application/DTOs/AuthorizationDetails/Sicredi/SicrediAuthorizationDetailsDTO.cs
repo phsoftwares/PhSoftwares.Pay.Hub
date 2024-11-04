@@ -7,6 +7,6 @@
         public string AccessToken { get; set; }
         public string Cooperative { get; set; }
         public string Post { get; set; }
-        public string RecipientCode { get; set; }
+        public string PayeeCode { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "UpdateDateTime",
-                table: "Recipients",
+                table: "Payees",
                 newName: "UpdatedDateTime");
 
             migrationBuilder.RenameColumn(
@@ -64,7 +64,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "UpdatedDateTime",
-                table: "Recipients",
+                table: "Payees",
                 newName: "UpdateDateTime");
 
             migrationBuilder.RenameColumn(

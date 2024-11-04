@@ -14,18 +14,18 @@ namespace PhSoftwares.Pay.Hub.Application.Services
     public class PaymentPixService : IPaymentPixService
     {
         private readonly IPayerService _payerService;
-        private readonly IRecipientService _recipientService;
+        private readonly IPayeeService _payeeService;
 
-        public PaymentPixService(IPayerService payerService, IRecipientService recipientService)
+        public PaymentPixService(IPayerService payerService, IPayeeService payeeService)
         {
             _payerService = payerService;
-            _recipientService = recipientService;
+            _payeeService = payeeService;
         }
 
         public async Task<BoletoPaymentOutputDTO> CreatePaymentPixSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO)
         {
             var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
-            var recipientDTO = await UpsertRecipientByDocument(inputDTO.Recipient);
+            var payeeDTO = await UpsertPayeeByDocument(inputDTO.Payee);
             //makePaymentInputDTO.PaymentMethod.MakePayment();
 
             return await Task.FromResult(new BoletoPaymentOutputDTO
@@ -47,16 +47,16 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             }
         }
 
-        private async Task<RecipientDTO> UpsertRecipientByDocument(RecipientDTO recipientDTO)
+        private async Task<PayeeDTO> UpsertPayeeByDocument(PayeeDTO payeeDTO)
         {
-            var recipientId = await _recipientService.GetIdIfDocumentIsRegistred(recipientDTO.DocumentNumber);
-            if (recipientId == Guid.Empty)
+            var payeeId = await _payeeService.GetIdIfDocumentIsRegistred(payeeDTO.DocumentNumber);
+            if (payeeId == Guid.Empty)
             {
-                return await _recipientService.Insert(recipientDTO);
+                return await _payeeService.Insert(payeeDTO);
             }
             else
             {
-                return await _recipientService.UpdateWithId(recipientDTO, recipientId);
+                return await _payeeService.UpdateWithId(payeeDTO, payeeId);
             }
         }
     }

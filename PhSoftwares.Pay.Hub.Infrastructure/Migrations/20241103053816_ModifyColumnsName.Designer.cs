@@ -77,7 +77,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     b.Property<Guid>("PaymentTypeId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("RecipientId")
+                    b.Property<Guid>("PayeeId")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedDateTime")
@@ -89,7 +89,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
                     b.HasIndex("PaymentTypeId");
 
-                    b.HasIndex("RecipientId");
+                    b.HasIndex("PayeeId");
 
                     b.ToTable("Payments");
                 });
@@ -185,7 +185,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     b.ToTable("Payers");
                 });
 
-            modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.Person.Recipient", b =>
+            modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.Person.Payee", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -259,7 +259,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recipients");
+                    b.ToTable("Payees");
                 });
 
             modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.User", b =>
@@ -322,9 +322,9 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("PhSoftwares.Pay.Hub.Core.Entities.Person.Recipient", "Recipient")
+                    b.HasOne("PhSoftwares.Pay.Hub.Core.Entities.Person.Payee", "Payee")
                         .WithMany("Payments")
-                        .HasForeignKey("RecipientId")
+                        .HasForeignKey("PayeeId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -334,7 +334,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
                     b.Navigation("PaymentType");
 
-                    b.Navigation("Recipient");
+                    b.Navigation("Payee");
                 });
 
             modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.FinancialInstitution", b =>
@@ -352,7 +352,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     b.Navigation("Payments");
                 });
 
-            modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.Person.Recipient", b =>
+            modelBuilder.Entity("PhSoftwares.Pay.Hub.Core.Entities.Person.Payee", b =>
                 {
                     b.Navigation("Payments");
                 });

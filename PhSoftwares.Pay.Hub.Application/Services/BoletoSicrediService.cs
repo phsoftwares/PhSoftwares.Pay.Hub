@@ -56,7 +56,7 @@ namespace PhSoftwares.Pay.Hub.Application.Services
                 var request = new HttpRequestMessage(HttpMethod.Post, url);
                 request.Headers.Add("x-api-key", authorizationDetailsDTO.AccessToken);
                 request.Headers.Add("cooperativa", authorizationDetailsDTO.Cooperative);
-                request.Headers.Add("codigoBeneficiario", authorizationDetailsDTO.RecipientCode);
+                request.Headers.Add("codigoBeneficiario", authorizationDetailsDTO.PayeeCode);
                 request.Headers.Add("posto", authorizationDetailsDTO.Post);
                 request.Headers.Add("Authorization", "Bearer " + accessToken);
                 var jsonContent = JsonConvert.SerializeObject(inputDTO);

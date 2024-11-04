@@ -20,8 +20,8 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public required FinancialInstitution FinancialInstitution { get; set; }
         public Guid PayerId {  get; set; }
         public required Payer Payer { get; set; }
-        public Guid RecipientId { get; set; }
-        public required Recipient Recipient { get; set; }
+        public Guid PayeeId { get; set; }
+        public required Payee Payee { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public DateTime UpdatedDateTime { get; set; }
         public Guid CreationUserId { get; set; }

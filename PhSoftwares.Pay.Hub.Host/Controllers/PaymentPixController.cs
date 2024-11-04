@@ -22,7 +22,7 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
         public async Task<BoletoPaymentOutputDTO> PostMakePaymentPix(MakePaymentInputDTO input)
         {
             var userId = Guid.Parse(User.FindFirst("id").Value);
-            input.Recipient.SetCreationUserId(userId);
+            input.Payee.SetCreationUserId(userId);
             input.Payer.SetCreationUserId(userId);
             return await _paymentPixService.MakePayment(input);
         } */

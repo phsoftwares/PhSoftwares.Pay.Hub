@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace PhSoftwares.Pay.Hub.Infrastructure.EntitiesConfiguration
 {
-    internal class RecipientsConfiguration : IEntityTypeConfiguration<Recipient>
+    internal class PayeesConfiguration : IEntityTypeConfiguration<Payee>
     {
-        public void Configure(EntityTypeBuilder<Recipient> builder) 
+        public void Configure(EntityTypeBuilder<Payee> builder) 
         { 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();

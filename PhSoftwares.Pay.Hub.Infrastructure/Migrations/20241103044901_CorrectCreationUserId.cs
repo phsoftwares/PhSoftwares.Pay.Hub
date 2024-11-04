@@ -12,7 +12,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "CreationUsername",
-                table: "Recipients",
+                table: "Payees",
                 newName: "CreationUserId");
 
             migrationBuilder.RenameColumn(
@@ -31,7 +31,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "CreationUserId",
-                table: "Recipients",
+                table: "Payees",
                 newName: "CreationUsername");
 
             migrationBuilder.RenameColumn(

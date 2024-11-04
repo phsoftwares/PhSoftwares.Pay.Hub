@@ -63,13 +63,13 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
             services.AddScoped<IAuthenticateService, AuthenticateService>();
 
             services.AddScoped<IPayerRepository, PayerRepository>();
-            services.AddScoped<IRecipientRepository, RecipientRepository>();
+            services.AddScoped<IPayeeRepository, PayeeRepository>();
 
             services.AddScoped<IPayerMapper, PayerMapper>();
-            services.AddScoped<IRecipientMapper, RecipientMapper>();
+            services.AddScoped<IPayeeMapper, PayeeMapper>();
 
             services.AddScoped<IPayerService, PayerService>();
-            services.AddScoped<IRecipientService, RecipientService>();
+            services.AddScoped<IPayeeService, PayeeService>();
 
 
             services.AddScoped<IPaymentPixService, PaymentPixService>();

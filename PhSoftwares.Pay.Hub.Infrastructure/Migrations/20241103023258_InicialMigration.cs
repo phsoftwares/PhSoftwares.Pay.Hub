@@ -62,7 +62,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recipients",
+                name: "Payees",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -84,7 +84,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recipients", x => x.Id);
+                    table.PrimaryKey("PK_Payees", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -99,7 +99,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                     PaymentTypeId = table.Column<Guid>(type: "TEXT", nullable: false),
                     FinancialInstitutionId = table.Column<Guid>(type: "TEXT", nullable: false),
                     PayerId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    RecipientId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PayeeId = table.Column<Guid>(type: "TEXT", nullable: false),
                     CreatedDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdateDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     CreationUsername = table.Column<DateTime>(type: "TEXT", nullable: false)
@@ -123,9 +123,9 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                         principalTable: "PaymentTypes",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Payments_Recipients_RecipientId",
-                        column: x => x.RecipientId,
-                        principalTable: "Recipients",
+                        name: "FK_Payments_Payees_PayeeId",
+                        column: x => x.PayeeId,
+                        principalTable: "Payees",
                         principalColumn: "Id");
                 });
 
@@ -140,9 +140,9 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                 column: "PaymentTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_RecipientId",
+                name: "IX_Payments_PayeeId",
                 table: "Payments",
-                column: "RecipientId");
+                column: "PayeeId");
         }
 
         /// <inheritdoc />
@@ -161,7 +161,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
                 name: "PaymentTypes");
 
             migrationBuilder.DropTable(
-                name: "Recipients");
+                name: "Payees");
         }
     }
 }

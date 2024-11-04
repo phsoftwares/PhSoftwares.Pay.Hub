@@ -13,7 +13,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
         {
             migrationBuilder.AlterColumn<DateTime>(
                 name: "UpdateDateTime",
-                table: "Recipients",
+                table: "Payees",
                 type: "datetime",
                 nullable: false,
                 oldClrType: typeof(DateTime),
@@ -21,7 +21,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
             migrationBuilder.AlterColumn<DateTime>(
                 name: "CreatedDateTime",
-                table: "Recipients",
+                table: "Payees",
                 type: "datetime",
                 nullable: false,
                 oldClrType: typeof(DateTime),
@@ -49,7 +49,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
         {
             migrationBuilder.AlterColumn<DateTime>(
                 name: "UpdateDateTime",
-                table: "Recipients",
+                table: "Payees",
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(DateTime),
@@ -57,7 +57,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Migrations
 
             migrationBuilder.AlterColumn<DateTime>(
                 name: "CreatedDateTime",
-                table: "Recipients",
+                table: "Payees",
                 type: "TEXT",
                 nullable: false,
                 oldClrType: typeof(DateTime),

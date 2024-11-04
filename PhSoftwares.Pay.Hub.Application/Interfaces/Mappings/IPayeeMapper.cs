@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PhSoftwares.Pay.Hub.Application.Interfaces.Mappings
 {
-    public interface IRecipientMapper
+    public interface IPayeeMapper
     {
-        Task<Recipient> MapFromDTO(RecipientDTO recipientDTO);
-        Task<RecipientDTO> MapFromEntitie(Recipient recipient);
+        Task<Payee> MapFromDTO(PayeeDTO payeeDTO);
+        Task<PayeeDTO> MapFromEntitie(Payee payee);
     }
 }

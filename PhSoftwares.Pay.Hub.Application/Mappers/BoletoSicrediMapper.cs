@@ -27,7 +27,7 @@ namespace PhSoftwares.Pay.Hub.Application.Mappers
                 especieDocumento = inputDTO.PaymentMethod.DocumentType,
                 juros = inputDTO.PaymentMethod.InterestValue,
                 tipoCobranca = inputDTO.PaymentMethod.TypeCharge,
-                codigoBeneficiario = inputDTO.AuthorizationDetails.RecipientCode,
+                codigoBeneficiario = inputDTO.AuthorizationDetails.PayeeCode,
                 tipoJuros = "VALOR"
             });
         }
@@ -67,15 +67,15 @@ namespace PhSoftwares.Pay.Hub.Application.Mappers
         {
             return new BeneficiarioFinalSicrediDTO()
             {
-                cep = Regex.Replace(inputDTO.Recipient.Adress.ZipCode, @"\D", ""),
-                cidade = inputDTO.Recipient.Adress.City,
-                documento = Regex.Replace(inputDTO.Recipient.DocumentNumber, @"\D", ""),
-                logradouro = inputDTO.Recipient.Adress.Street,
-                nome = inputDTO.Recipient.FullName,
-                numeroEndereco = inputDTO.Recipient.Adress.Number,
+                cep = Regex.Replace(inputDTO.Payee.Adress.ZipCode, @"\D", ""),
+                cidade = inputDTO.Payee.Adress.City,
+                documento = Regex.Replace(inputDTO.Payee.DocumentNumber, @"\D", ""),
+                logradouro = inputDTO.Payee.Adress.Street,
+                nome = inputDTO.Payee.FullName,
+                numeroEndereco = inputDTO.Payee.Adress.Number,
                 tipoPessoa = "PESSOA_FISICA", //TODO: VOLTAR AQUI DEPOIS
-                uf = inputDTO.Recipient.Adress.State,
-                codigoBeneficiario = inputDTO.AuthorizationDetails.RecipientCode
+                uf = inputDTO.Payee.Adress.State,
+                codigoBeneficiario = inputDTO.AuthorizationDetails.PayeeCode
             };
         }
         private PagadorSicrediDTO GetPagadorSicrediDTO(PayerDTO payerDTO)
