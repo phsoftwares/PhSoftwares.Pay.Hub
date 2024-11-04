@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentBoletoController",
+    "Method": "CreatePaymentBoletoBancoBrasil",
+    "RelativePath": "api/payment/boleto/bancobrasil",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.CreatePaymentBoleto.CreatePaymentBoletoBancoBrasilInputDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput.BoletoPaymentOutputDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentBoletoController",
     "Method": "CreatePaymentBoletoSicredi",
     "RelativePath": "api/payment/boleto/sicredi",
     "HttpMethod": "POST",

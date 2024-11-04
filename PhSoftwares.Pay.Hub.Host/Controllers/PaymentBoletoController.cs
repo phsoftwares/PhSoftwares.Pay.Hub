@@ -25,5 +25,11 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
         {
             return await _paymentBoletoService.CreatePaymentBoletoSicredi(input);
         }
+
+        [HttpPost("bancobrasil")]
+        public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoBancoBrasil(CreatePaymentBoletoBancoBrasilInputDTO input)
+        {
+            return await _paymentBoletoService.CreatePaymentBoletoBancoBrasil(input);
+        }
     }
 }

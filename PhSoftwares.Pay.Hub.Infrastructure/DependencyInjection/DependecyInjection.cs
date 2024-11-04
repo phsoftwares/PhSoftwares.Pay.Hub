@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using PhSoftwares.Pay.Hub.Application.Interfaces.Mappers;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Mappings;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
@@ -52,6 +53,9 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
             });
 
             services.AddHttpClient();
+
+            services.AddScoped<IBoletoBancoBrasilMapper, BoletoBancoBrasilMapper>();
+            services.AddScoped<IBoletoBancoBrasilService, BoletoBancoBrasilService>();
 
             services.AddScoped<IBoletoSicrediMapper, BoletoSicrediMapper>();
             services.AddScoped<IBoletoSicrediService, BoletoSicrediService>();

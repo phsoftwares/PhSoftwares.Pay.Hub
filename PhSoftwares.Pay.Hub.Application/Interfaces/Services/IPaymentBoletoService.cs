@@ -6,5 +6,6 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Services
     public interface IPaymentBoletoService
     {
         Task<BoletoPaymentOutputDTO> CreatePaymentBoletoSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO);
+        Task<BoletoPaymentOutputDTO> CreatePaymentBoletoBancoBrasil(CreatePaymentBoletoBancoBrasilInputDTO inputDTO);
     }
 }

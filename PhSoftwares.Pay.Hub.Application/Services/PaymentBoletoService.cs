@@ -13,12 +13,14 @@ namespace PhSoftwares.Pay.Hub.Application.Services
         private readonly IPayerService _payerService;
         private readonly IPayeeService _payeeService;
         private readonly IBoletoSicrediService _boletoSicrediService;
+        private readonly IBoletoBancoBrasilService _boletoBancoBrasilService;
 
-        public PaymentBoletoService(IPayerService payerService, IPayeeService payeeService, IBoletoSicrediService boletoSicrediService)
+        public PaymentBoletoService(IPayerService payerService, IPayeeService payeeService, IBoletoSicrediService boletoSicrediService, IBoletoBancoBrasilService boletoBancoBrasilService)
         {
             _payerService = payerService;
             _payeeService = payeeService;
             _boletoSicrediService = boletoSicrediService;
+            _boletoBancoBrasilService = boletoBancoBrasilService;
         }
 
         public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoSicredi(CreatePaymentBoletoSicrediInputDTO inputDTO)
@@ -26,6 +28,13 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
             var payeeDTO = await UpsertPayeeByDocument(inputDTO.Payee);
             return await _boletoSicrediService.StartBillingRegistration(inputDTO);
+        }
+
+        public async Task<BoletoPaymentOutputDTO> CreatePaymentBoletoBancoBrasil(CreatePaymentBoletoBancoBrasilInputDTO inputDTO)
+        {
+            var payerDTO = await UpsertPayerByDocument(inputDTO.Payer);
+            var payeeDTO = await UpsertPayeeByDocument(inputDTO.Payee);
+            return await _boletoBancoBrasilService.StartBillingRegistration(inputDTO);
         }
 
         private async Task<PayerDTO> UpsertPayerByDocument(PayerDTO payerDTO)
