@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
 using PhSoftwares.Pay.Hub.Core.Entities;
 using PhSoftwares.Pay.Hub.Core.Entities.Person;
@@ -52,6 +53,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             {
                 _context.Entry(existingPayment).State = EntityState.Detached;
                 payment.CreatedDateTime = existingPayment.CreatedDateTime;
+                payment.CreationUserId = existingPayment.CreationUserId;
             }
 
             _context.Payments.Update(payment);

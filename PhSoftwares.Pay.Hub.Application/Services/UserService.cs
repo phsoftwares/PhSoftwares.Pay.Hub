@@ -45,5 +45,11 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             var userUpdate = await _userRepository.Update(user);
             return await _userMapper.MapFromEntitie(userUpdate);
         }
+
+        public async Task<UserDTO> GetByEmailAddress(string emailAddress)
+        {
+            var user = await _userRepository.GetByEmailAddress(emailAddress);
+            return await _userMapper.MapFromEntitie(user);
+        }
     }
 }

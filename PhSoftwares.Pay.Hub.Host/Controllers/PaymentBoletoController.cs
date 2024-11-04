@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
+using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 
 namespace PhSoftwares.Pay.Hub.Host.Controllers
 {
@@ -10,21 +12,18 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
     public class PaymentBoletoController : Controller
     {
         private readonly ILogger<PaymentBoletoController> _logger;
+        private readonly IPaymentBoletoService _paymentBoletoService;
 
-        public PaymentBoletoController(ILogger<PaymentBoletoController> logger)
+        public PaymentBoletoController(ILogger<PaymentBoletoController> logger, IPaymentBoletoService paymentBoletoService)
         {
             _logger = logger;
+            _paymentBoletoService = paymentBoletoService;
         }
 
         [HttpPost]
-        public MakePaymentOutputDTO PostMakePaymentBoleto(MakePaymentInputDTO input)
+        public async Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO input)
         {
-            input.PaymentMethod.MakePayment();
-            return new MakePaymentOutputDTO
-            {
-                Success = true,
-                Message = "Request received - BOLETO"
-            };
+            return await _paymentBoletoService.MakePayment(input);
         }
     }
 }

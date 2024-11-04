@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 
 namespace PhSoftwares.Pay.Hub.Host.Controllers
@@ -18,7 +19,7 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
         }
 
         [HttpPost]  
-        public async Task<MakePaymentOutputDTO> PostMakePaymentPix(MakePaymentInputDTO input)
+        public async Task<BoletoPaymentOutputDTO> PostMakePaymentPix(MakePaymentInputDTO input)
         {
             var userId = Guid.Parse(User.FindFirst("id").Value);
             input.Recipient.SetCreationUserId(userId);

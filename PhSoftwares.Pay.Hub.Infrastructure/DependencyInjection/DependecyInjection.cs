@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,8 +7,10 @@ using Microsoft.IdentityModel.Tokens;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Mappings;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Repositories;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
+using PhSoftwares.Pay.Hub.Application.Mappers;
 using PhSoftwares.Pay.Hub.Application.Mappings;
 using PhSoftwares.Pay.Hub.Application.Services;
+using PhSoftwares.Pay.Hub.Boleto.Interfaces.Mappers;
 using PhSoftwares.Pay.Hub.Core.Account;
 using PhSoftwares.Pay.Hub.Infrastructure.Context;
 using PhSoftwares.Pay.Hub.Infrastructure.Identity;
@@ -48,13 +51,16 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
                 };
             });
 
+            services.AddHttpClient();
+
+            services.AddScoped<IBoletoSicrediMapper, BoletoSicrediMapper>();
+            services.AddScoped<IBoletoSicrediService, BoletoSicrediService>();
+
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserMapper, UserMapper>();
             services.AddScoped<IUserService, UserService>();
 
             services.AddScoped<IAuthenticateService, AuthenticateService>();
-            services.AddScoped<ITokenService, TokenService>();
-
 
             services.AddScoped<IPayerRepository, PayerRepository>();
             services.AddScoped<IRecipientRepository, RecipientRepository>();
@@ -67,7 +73,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.DependencyInjection
 
 
             services.AddScoped<IPaymentPixService, PaymentPixService>();
-
+            services.AddScoped<IPaymentBoletoService, PaymentBoletoService>();
 
             return services;
         }

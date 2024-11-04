@@ -44,6 +44,11 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             return user;
         }
 
+        public async Task<User> GetByEmailAddress(String emailAddress)
+        {
+            return await _context.Users.FirstOrDefaultAsync(p => p.EmailAddress.Trim().ToLower() == emailAddress.Trim().ToLower());
+        }
+
         public async Task<User> Update(User user)
         {
             var existingUser = await _context.Users.FindAsync(user.Id);

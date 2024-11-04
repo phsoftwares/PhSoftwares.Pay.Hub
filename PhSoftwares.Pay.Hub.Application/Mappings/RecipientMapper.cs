@@ -1,4 +1,5 @@
-﻿using PhSoftwares.Pay.Hub.Application.DTOs.Person;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using PhSoftwares.Pay.Hub.Application.DTOs.Person;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Mappings;
 using PhSoftwares.Pay.Hub.Core.Entities.Person;
 
@@ -16,7 +17,7 @@ namespace PhSoftwares.Pay.Hub.Application.Mappings
                 DocumentNumber = recipientDTO.DocumentNumber,
                 CreatedDateTime = DateTime.UtcNow,
                 UpdatedDateTime = DateTime.UtcNow,
-                CreationUserId = Guid.NewGuid(), ///TODO: VOLTAR AQUI
+                CreationUserId = recipientDTO.CreationUserId ?? Guid.Empty,
                 AddressStreet = recipientDTO.Adress.Street,
                 AddressNumber = recipientDTO.Adress.Number,
                 AddressNeighborhood = recipientDTO.Adress.Neighborhood,

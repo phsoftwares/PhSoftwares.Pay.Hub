@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "PhSoftwares.Pay.Hub.Host.Controllers.PaymentBoletoController",
-    "Method": "PostMakePaymentBoleto",
+    "Method": "MakePayment",
     "RelativePath": "api/payment/boleto",
     "HttpMethod": "POST",
     "IsController": true,
@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentOutputDTO",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput.BoletoPaymentOutputDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -41,7 +41,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.MakePaymentOutputDTO",
+        "Type": "PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput.BoletoPaymentOutputDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

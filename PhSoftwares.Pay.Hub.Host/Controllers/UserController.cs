@@ -50,6 +50,10 @@ namespace PhSoftwares.Pay.Hub.Host.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserToken>> Login(UserDTO userDTO)
         {
+            if (userDTO == null)
+            {
+                return BadRequest("User required.");
+            }
             var user = await _userService.GetByEmailAddress(userDTO.EmailAddress);
             if (user == null || user.Id == null)
             {

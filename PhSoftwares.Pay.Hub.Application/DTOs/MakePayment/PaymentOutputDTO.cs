@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PhSoftwares.Pay.Hub.Application.DTOs.MakePayment
 {
-    public class MakePaymentOutputDTO
+    public class PaymentOutputDTO
     {
-        public Guid PaymentId { get; set; }
+        public Guid Id { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; }
     }

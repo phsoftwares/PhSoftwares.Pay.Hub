@@ -10,7 +10,7 @@ namespace PhSoftwares.Pay.Hub.Application.Enums
     {
         Pix = 0,
         Boleto = 1,
-        CartaoDebito = 2,
-        CartaoCredito = 3
+        DebitCard = 2,
+        CreditCard = 3
     }
 }

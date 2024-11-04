@@ -23,6 +23,5 @@ namespace PhSoftwares.Pay.Hub.Core.Entities
         public string AddressState { get; set; }
         public string ZipCode { get; set; }
         public ICollection<Payment> Payments { get; set; }
-
     }
 }

@@ -51,7 +51,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             if (existingPaymentType != null)
             {
                 _context.Entry(existingPaymentType).State = EntityState.Detached;
-                paymentType.CreatedDateTime = existingPaymentType.CreatedDateTime;
+                paymentType.CreatedDateTime = existingPaymentType.CreatedDateTime;               
             }
 
             _context.PaymentTypes.Update(paymentType);

@@ -1,4 +1,5 @@
 ﻿using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment;
+using PhSoftwares.Pay.Hub.Application.DTOs.MakePayment.PaymentOutput;
 using PhSoftwares.Pay.Hub.Application.DTOs.Person;
 using PhSoftwares.Pay.Hub.Application.Interfaces.Services;
 using PhSoftwares.Pay.Hub.Core.Entities.Person;
@@ -21,13 +22,13 @@ namespace PhSoftwares.Pay.Hub.Application.Services
             _recipientService = recipientService;
         }
 
-        public async Task<MakePaymentOutputDTO> MakePayment(MakePaymentInputDTO makePaymentInputDTO)
+        public async Task<BoletoPaymentOutputDTO> MakePayment(MakePaymentInputDTO makePaymentInputDTO)
         {
             var payerDTO = await UpsertPayerByDocument(makePaymentInputDTO.Payer);
             var recipientDTO = await UpsertRecipientByDocument(makePaymentInputDTO.Recipient);
-            makePaymentInputDTO.PaymentMethod.MakePayment();
+            //makePaymentInputDTO.PaymentMethod.MakePayment();
 
-            return await Task.FromResult(new MakePaymentOutputDTO
+            return await Task.FromResult(new BoletoPaymentOutputDTO
             {
                 Success = true,
                 Message = "Request received - PIX"

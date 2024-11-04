@@ -62,6 +62,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             {
                 _context.Entry(existingPayer).State = EntityState.Detached;
                 payer.CreatedDateTime = existingPayer.CreatedDateTime;
+                payer.CreationUserId = existingPayer.CreationUserId;
             }
             _context.Payers.Update(payer);
             await _context.SaveChangesAsync();

@@ -16,7 +16,7 @@ namespace PhSoftwares.Pay.Hub.Application.Mappings
                 DocumentNumber = payerDTO.DocumentNumber,
                 CreatedDateTime = DateTime.UtcNow,
                 UpdatedDateTime = DateTime.UtcNow,
-                CreationUserId = Guid.NewGuid(), ///TODO: VOLTAR AQUI
+                CreationUserId = payerDTO.CreationUserId ?? Guid.Empty,
                 AddressStreet = payerDTO.Adress.Street,
                 AddressNumber = payerDTO.Adress.Number,
                 AddressNeighborhood = payerDTO.Adress.Neighborhood,

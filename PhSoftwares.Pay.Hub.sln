@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhSoftwares.Pay.Hub.Host", "PhSoftwares.Pay.Hub.Host\PhSoftwares.Pay.Hub.Host.csproj", "{62614CD6-4798-4B9A-87D9-E0B2695DB523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhSoftwares.Pay.Hub.Core", "PhSoftwares.Pay.Hub.Core\PhSoftwares.Pay.Hub.Core.csproj", "{10DAA8E5-CBDD-4F46-8373-4BB46C23A358}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhSoftwares.Pay.Hub.Core", "PhSoftwares.Pay.Hub.Core\PhSoftwares.Pay.Hub.Core.csproj", "{10DAA8E5-CBDD-4F46-8373-4BB46C23A358}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhSoftwares.Pay.Hub.Infrastructure", "PhSoftwares.Pay.Hub.Infrastructure\PhSoftwares.Pay.Hub.Infrastructure.csproj", "{C29E1165-AA02-4D0A-8717-EF50626EA4A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhSoftwares.Pay.Hub.Infrastructure", "PhSoftwares.Pay.Hub.Infrastructure\PhSoftwares.Pay.Hub.Infrastructure.csproj", "{C29E1165-AA02-4D0A-8717-EF50626EA4A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhSoftwares.Pay.Hub.Application", "PhSoftwares.Pay.Hub.Application\PhSoftwares.Pay.Hub.Application.csproj", "{A57122D3-005B-4460-95F2-04AB50CD938E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhSoftwares.Pay.Hub.Application", "PhSoftwares.Pay.Hub.Application\PhSoftwares.Pay.Hub.Application.csproj", "{A57122D3-005B-4460-95F2-04AB50CD938E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

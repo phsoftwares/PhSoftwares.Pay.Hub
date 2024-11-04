@@ -16,5 +16,6 @@ namespace PhSoftwares.Pay.Hub.Application.Interfaces.Repositories
         Task<User> Update(User user);
         Task<IEnumerable<User>> GetAll();
         Task<User> GetById(Guid id);
+        Task<User> GetByEmailAddress(string emailAddress);
     }
 }

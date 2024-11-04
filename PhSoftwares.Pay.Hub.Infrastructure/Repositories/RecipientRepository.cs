@@ -57,6 +57,7 @@ namespace PhSoftwares.Pay.Hub.Infrastructure.Repositories
             {
                 _context.Entry(existingRecipient).State = EntityState.Detached;
                 recipient.CreatedDateTime = existingRecipient.CreatedDateTime;
+                recipient.CreationUserId = existingRecipient.CreationUserId;
             }
 
             _context.Recipients.Update(recipient);
